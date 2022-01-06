@@ -8,9 +8,9 @@ function NhanVien(tk,ten,email,pass,ngay,luongCB,chucvu,gioLam){
     this.chucvuNV=chucvu;
     this.timeNV=gioLam;
     this.tongLuong= 0;
-    this.loai= '';
+    
 
-    this.tongLuong = function(tongLuong){
+    this.tongLuong = function(){
         if(this.chucvuNV == "Sếp"){
             this.tongLuong = this.luongNV * 3;
         }else if(this.chucvuNV == "Trưởng Phòng"){
@@ -21,7 +21,7 @@ function NhanVien(tk,ten,email,pass,ngay,luongCB,chucvu,gioLam){
             this.tongLuong = 0;
         }
     }
-    this.XepLoai = function(loai){
+    this.XepLoai = function(){
         if(this.timeNV >= 192){
             this.loai = "Nhân viên xuất sắc";
         }else if(this.timeNV >= 176){
