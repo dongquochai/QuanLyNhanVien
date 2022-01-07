@@ -7,7 +7,7 @@ function DanhSachNhanVien(){
     this.timViTri = function(id){
         var viTri = -1 ;
         this.mangNV.map(function(nv,index){
-            if(nv.taiKhoanNV == id){
+            if(nv.tkhoanNV === id){
                 viTri = index;
             }
         });
@@ -22,23 +22,23 @@ function DanhSachNhanVien(){
         }
     }
     this.capNhat = function(nv){
-        var viTri = this.timViTri(nv.taiKhoanNV);
+        var viTri = this.timViTri(nv.tkhoanNV);
         if(viTri != -1){
             this.mangNV[viTri] = nv;
         }else{
             console.log("Không tìm thấy nhân viên để cập nhật");
         }
     }
-    this.searchChucvu = function(keyword){
+    this.searchLoai = function(keyword){
         var mangTK = [];
         var keywordLower = keyword.toLowerCase();
         this.mangNV.map(function(nv){
-            var chucVuLower = nv.loai.toLowerCase();
-            var indexChucVu = chucVuLower.indexOf(keywordLower);
-            if(indexChucVu > -1){
+            var LoaiLower = nv.loai.toLowerCase();
+            var indexLoai = LoaiLower.indexOf(keywordLower);
+            if(indexLoai > -1){
                 mangTK.push(nv);
             }
         })
-        return true;
+        return mangTK;
     }
 }
